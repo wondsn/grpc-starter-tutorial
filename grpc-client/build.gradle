@@ -2,12 +2,15 @@ plugins {
     id 'org.springframework.boot'
 }
 
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:2021.0.2"
+    }
+}
+
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'net.devh:grpc-client-spring-boot-starter:2.12.0.RELEASE'
+    implementation "org.springframework.cloud:spring-cloud-starter-openfeign"
     implementation project(':grpc-lib')
-}
-
-test {
-    useJUnitPlatform()
 }

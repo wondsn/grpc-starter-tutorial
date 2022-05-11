@@ -11,8 +11,13 @@ public class GrpcClientController {
     @Autowired
     private GrpcClientService grpcClientService;
 
-    @GetMapping("/")
-    public String printMessage(@RequestParam(defaultValue = "kim") String name) {
-        return grpcClientService.sendMessage(name);
+    @GetMapping("/grpc")
+    public String printMessageUsingGrpc(@RequestParam(defaultValue = "kim") String name) {
+        return grpcClientService.sendMessageUsingGrpc(name);
+    }
+
+    @GetMapping("/rest")
+    public String printMessageUsingRest(@RequestParam(defaultValue = "kim") String name) {
+        return grpcClientService.sendMessageUsingRest(name);
     }
 }
