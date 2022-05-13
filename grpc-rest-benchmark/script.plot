@@ -4,7 +4,7 @@ set terminal png size 1024,768
 set size 1,0.5
 
 # 결과 파일 설정
-set output "images/grpc_10000req_100cur.png"
+set output "images/result.png"
 
 # 범례/key 위치
 set key left top
@@ -21,6 +21,6 @@ set ylabel "response time (ms)"
 set datafile separator '\t'
 
 # Plot the data
-plot "grpc_10000req_100cur.plot" every ::2 using 5 title 'response time' with lines
+plot "result.plot" every ::2 using 5 title 'response time' with lines
 exit
 
