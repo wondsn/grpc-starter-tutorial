@@ -1,7 +1,6 @@
 package hello.wondsn.grpctutorial;
 
-import hello.wondsn.tutorial.HelloReply;
-import hello.wondsn.tutorial.HelloRequest;
+import hello.wondsn.tutorial.*;
 import io.grpc.stub.StreamObserver;
 import net.devh.boot.grpc.server.service.GrpcService;
 import org.slf4j.Logger;
@@ -20,5 +19,10 @@ public class GrpcServerService extends SimpleImplBase {
         HelloReply reply = HelloReply.newBuilder().setMessage("Hello ==> " + request.getName()).build();
         responseObserver.onNext(reply);
         responseObserver.onCompleted();
+    }
+
+    @Override
+    public StreamObserver<IntegerRequest> sumStreamInteger(StreamObserver<SumReply> responseObserver) {
+        return super.sumStreamInteger(responseObserver);
     }
 }

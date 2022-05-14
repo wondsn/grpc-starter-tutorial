@@ -16,6 +16,11 @@ public class GrpcClientController {
         return grpcClientService.sendMessageUsingGrpc(name);
     }
 
+    @GetMapping("/grpc-stream")
+    public Integer printSumOfInteger() throws InterruptedException {
+        return grpcClientService.sendBigDataUsingGrpc();
+    }
+
     @GetMapping("/rest")
     public String printMessageUsingRest(@RequestParam(defaultValue = "kim") String name) {
         return grpcClientService.sendMessageUsingRest(name);
