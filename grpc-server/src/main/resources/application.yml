@@ -3,6 +3,9 @@ server.port: 8081
 spring:
   application:
     name: grpc-server
+  servlet.multipart:
+    max-file-size: -1
+    max-request-size: -1
 
 grpc:
   server:

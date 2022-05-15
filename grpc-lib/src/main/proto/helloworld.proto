@@ -1,14 +1,10 @@
 syntax = "proto3";
 
-package stream_client;
-
-option java_multiple_files = true;
 option java_package = "hello.wondsn.tutorial";
 option java_outer_classname = "HelloWorldProto";
 
 service Simple {
   rpc SayHello (HelloRequest) returns (HelloReply) {}
-  rpc SumStreamInteger (stream IntegerRequest) returns (SumReply) {}
 }
 
 message HelloRequest {
@@ -17,12 +13,4 @@ message HelloRequest {
 
 message HelloReply {
   string message = 1;
-}
-
-message IntegerRequest {
-  int32 num = 1;
-}
-
-message SumReply {
-  int32 sum = 1;
 }
